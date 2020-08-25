@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/category.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="Logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto nav-left">
+                    <li class="nav-item ">
+                    <a class="nav-link" href="#">fashion <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">elektronik</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Lebensmittel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Maschinenbau</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="far fa-user"></i> Mein Konto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> Warenkorb</a>
+                    </li>
+
+                </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="search-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 d-flex form-block">
+                        <p class="search-sign">Kostenloser Versand – Kostenlose Rückgabe</p>
+                        <form action="#" method="GET" class="search-form">
+                            
+                            <input type="text" name="search" placeholder="Suche">
+                            <input type="submit" class="form-btn-submt" value="">
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </header>
+
+    <div class="coffee-img">
+        <img src="images/Category/coffe_on_pink.png" alt="">
+    </div>
+    <div class="location container">
+        <ul class="location-list">
+            <li class="location-item"><a href="#">Home</a></li>
+            <li class="location-item"><a href="#">Lebensmittel</a></li>
+        </ul>
+    </div>
+    <h1 class="page-header">Lebensmittel</h1>
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <form action="#filter" method="GET" class="filter" id="filter">
+                        <div class="type-radio form-border">
+                            <h3 class="radio-header">Lebensmittel</h3>
+                            <p class="type"><input type="radio" name="type" id="all" value="all" checked><label for="all">Alle</label></p>
+                            <p class="type"><input type="radio" name="type" id="kaffee" value="kaffee"><label for="kaffee">Kaffee</label></p>
+                            <p class="type"><input type="radio" name="type" id="kakao" value="kakao"><label for="kakao">Kakao</label></p>
+                            <p class="type"><input type="radio" name="type" id="schok" value="schockolade"><label for="schok">Schockolade</label></p>
+                            <p class="type"><input type="radio" name="type" id="tee" value="tee"><label for="tee">Tee</label></p>
+                        </div>
+                        <div class="button-reset form-border">
+                            <button type="reset" class="btn-reset" id="reset">Alle Filter zurücksetzen</button>
+                        </div>
+                        <div class="price-range form-border">
+                            <h3 class="price-header">preis</h3>
+                            <p>
+                            
+                                <input class="range-input" type="text" id="amount" readonly >
+                              </p>
+                              <div id="slider-range"></div>
+                        </div>
+                        <div class="bio form-border">
+                            <h3 class="bio-header">bio</h3>
+                            <p><input type="checkbox" name="hz1" value="hz1" id="hz1"><label for="hz1">Voll Bio</label></p>
+                            <p><input checked type="checkbox" name="hz2" id="hz2" value="hz2"><label for="hz2" >Bio - Ohne Zusätze</label></p>
+                        </div>
+                        <div class="gewicht form-border">
+                            <h3 class="gewicht-header">Gewicht</h3>
+                            <div class="group-select">
+                                <div class="row-custom"><input      type="checkbox" name="g100" id="g100" value="100" ><label for="g100">100g</label>
+                                    <input type="checkbox" name="g150" id="g150" value="150"><label for="g150">150g</label>
+                                    <input type="checkbox" name="g200" id="g200" value="200"><label for="g200">200g</label>
+                                </div>
+                                    <div class="row-custom">
+                                        <input type="checkbox" name="g250" checked id="g250" value="250"><label for="g250" >250g</label>
+                                        <input type="checkbox" name="g500" id="g500" value="500"><label for="g500">500g</label>
+                                         <input type="checkbox" name="g750" id="g750" value="750"><label for="g750">750g</label>
+                                    </div>
+                                    <div class="row-custom">
+                                        <input type="checkbox" name="g1kg" id="g1kg" value="1000"><label for="g1kg">1kg</label>
+                                        <input type="checkbox" name="g15kg" id="g15kg" value="1500"><label for="g15kg">1.5kg</label>
+                                        <input type="checkbox" name="g2kg" id="g2kg" value="2000"><label for="g2kg">2kg</label>
+                                    </div>
+                            
+                            </div>
+                        </div>
+                        <div class="country form-border">
+                            <h3 class="country-header">Herkunftsland</h3>
+                            <p><input type="checkbox" name="" id="deu" checked><label for="deu">Deutschland</label></p>
+                            <p><input type="checkbox" name="" id="fra"><label for="fra">Frankreich </label></p>
+                            <p><input type="checkbox" name="" id="gri"><label for="gri">Griechenland</label></p>
+                            <p><input type="checkbox" name="" id="ita"><label for="ita">Italien</label></p>
+                            <p><input type="checkbox" name="" id="nie"><label for="nie">Niederlande</label></p>
+                            <p><input type="checkbox" name="" id="ost"><label for="ost">Österreich</label></p>
+                            
+                            <p><input type="checkbox" name="" id="por"><label for="por">Portugal</label></p>
+                            <p><input type="checkbox" name="" id="sch"><label for="sch">Schweiz</label></p>
+                            <p><input type="checkbox" name="" id="spa"><label for="spa">Spanien</label></p>
+                            
+                            
+                            
+                            
+                            
+                            
+
+                        </div>
+                        <div class="country form-border marke">
+                            <h3 class="country-header">Herkunftsland</h3>
+                            <p><input type="checkbox" name="" id="ex" checked><label for="ex">Exquisito</label></p>
+                            <p><input type="checkbox" name="" id="hai"><label for="hai">Haiti </label></p>
+                            <p><input type="checkbox" name="" id="mar"><label for="mar">Markentee</label></p>
+                            <p><input type="checkbox" name="" id="mess"><label for="mess">Messmer</label></p>
+                            <p><input type="checkbox" name="" id="milf"><label for="milf">milford</label></p>
+                            <p><input type="checkbox" name="" id="micro"><label for="micro">microsoft</label></p>
+                            
+                            <p><input type="checkbox" name="" id="nesp"><label for="nesp">Nespresso</label></p>
+                            <p><input type="checkbox" name="" id="nesc"><label for="nesc">nescafé</label></p>
+                            <p><input type="checkbox" name="" id="teek"><label for="teek">Teekanne</label></p>
+                        </div>
+                        <div class="sale">
+                            <input type="checkbox" name="" id="sale"><label for="sale">sale</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-9">
+                    <div class="views-desc">
+                        <div class="info">
+                        <p>12 von 136 Ergebnisse</p>
+                        </div>
+                        <div class="views-props">
+                            <div class="quantity-wrap">
+                                <p>Zeige</p>
+                                <select name="quantity"
+                                    class="quantity" id="">
+                                    <option value="12" selected>12</option>
+                                    <option value="18">18</option>
+                                    <option value="24">24</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+                            <div class="sort-select" >
+                                <select name="sort" id="" class="order">
+                                    <option value="" >Sortieren nach  Position</option>
+                                    <option value="desc">Sortieren nach  Position</option>
+                                </select>
+                            </div>
+                            <div class="icons-views">
+                                <div class="arrows">
+                                    <div class="arrow-top"></div>
+                                    <div class="arrow-bottom"></div>
+                                    
+
+                                </div>
+                                <p class="bar">
+                                    <input type="radio" name="type-view" id="bar">
+                                    <label for="bar">
+                                        <i class="fas fa-bars"></i>
+                                    </label>
+                                    <input type="radio" name="type-view" id="bar2">
+                                    <label for="bar2"><i class="fas fa-bars"></i>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                        <div class="pagination-wrap col-12">
+                            <nav aria-label="Page navigation example" class="pagination">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&#8592;</span>
+                                    </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&#8594;</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                                </nav>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product7.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product2.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-new">neu</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product1.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price"></span>
+                                        <span class="card-simple-price">12,59 €</span>
+                                        <span class="card-new-price"></span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <!-- <span class="card-banner-sale"></span> -->
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product3.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price"></span>
+                                        <span class="card-simple-price">12,59 €</span>
+                                        <span class="card-new-price"></span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product4.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product5.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product6.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product8.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product9.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product10.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product1.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-lg-4">
+                                <div class="card">
+                                    <div class="card-banner">
+                                        <span class="card-banner-sale">sale</span>
+                                    </div>
+                                    <div class="card-img-wrap">
+                                        <a class="card-link" href="">
+                                        <img src="images/Category/products/product12.png" alt="" class="card-image">
+                                        </a>
+                                    </div>
+                                    <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                                    <div class="card-price">
+                                        <span class="card-old-price">15,59</span>
+                                        <span class="card-simple-price"></span>
+                                        <span class="card-new-price">12,59 €</span>
+                                    </div>
+                                    <div class="card-desc">
+                                        <p class="card-desc-info">
+                                            Inkl. 19% MwSt., zzgl. 
+                                            <a class="card-transport" href="#">Versandkosten</a>
+                                        </p>
+                                        <span class="card-price-kg">2,59 € / 1 kg</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-12">
+                        <div class="row">
+                        <div class="pagination-wrap paginaton-bottom col-12">
+                            <nav aria-label="Page navigation example" class="pagination">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&#8592;</span>
+                                    </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&#8594;</span>
+                                    </a>
+                                    </li>
+                                </ul>
+                                </nav>
+                        </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="rec">
+        <div class="container">
+            <h4 class="rec-header">Zuletzt gesehene Produkte</h4>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-banner">
+                                <span class="card-banner-sale">sale</span>
+                            </div>
+                            <div class="card-img-wrap">
+                                <a class="card-link" href="">
+                                <img src="images/Category/products/product9.png" alt="" class="card-image">
+                                </a>
+                            </div>
+                            <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                            <div class="card-price">
+                                <span class="card-old-price">15,59</span>
+                                <span class="card-simple-price"></span>
+                                <span class="card-new-price">12,59 €</span>
+                            </div>
+                            <div class="card-desc">
+                                <p class="card-desc-info">
+                                    Inkl. 19% MwSt., zzgl. 
+                                    <a class="card-transport" href="#">Versandkosten</a>
+                                </p>
+                                <span class="card-price-kg">2,59 € / 1 kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-banner">
+                                <span class="card-banner-new">neu</span>
+                            </div>
+                            <div class="card-img-wrap">
+                                <a class="card-link" href="">
+                                <img src="images/Category/products/product3.png" alt="" class="card-image">
+                                </a>
+                            </div>
+                            <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                            <div class="card-price">
+                                <span class="card-old-price"></span>
+                                <span class="card-simple-price">77 €</span>
+                                <span class="card-new-price"></span>
+                            </div>
+                            <div class="card-desc">
+                                <p class="card-desc-info">
+                                    Inkl. 19% MwSt., zzgl. 
+                                    <a class="card-transport" href="#">Versandkosten</a>
+                                </p>
+                                <span class="card-price-kg">2,59 € / 1 kg</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="card">
+                            <div class="card-banner">
+                                
+                            </div>
+                            <div class="card-img-wrap">
+                                <a class="card-link" href="">
+                                <img src="images/Category/products/product7.png" alt="" class="card-image">
+                                </a>
+                            </div>
+                            <h4 class="card-header">TechDivision Grünrer Tee</h4>
+                            <div class="card-price">
+                                <span class="card-old-price"></span>
+                                <span class="card-simple-price">999 €</span>
+                                <span class="card-new-price"></span>
+                            </div>
+                            <div class="card-desc">
+                                <p class="card-desc-info">
+                                    Inkl. 19% MwSt., zzgl. 
+                                    <a class="card-transport" href="#">Versandkosten</a>
+                                </p>
+                                <span class="card-price-kg">2,59 € / 1 kg</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+
+    <footer>
+        <div class="footer-line">
+            <div class="container">
+                <div class="row line-footer back-line">
+                    <div class="col-sm-6 col-6 col-md-4">
+                        <div class="footer-phone">
+                                <i class="fas fa-phone-alt footer-phone-icon"></i>
+                                <div class="footer-phone-text">
+                                    <h5 class="footer-phone-heading">service und hilfe</h5>
+                                    <p class="footer-phone-number"> <a href="tel:+4980312210550">+49 8031 221 055 0</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-6 col-md-2">
+                        <h5 class="footer-phone-heading">fax</h5>
+                        <i class="fas fa-fax footer-icon"></i><a href="tel:+49803122105522"> +49 8031 2210 55 22</a>
+                    </div>
+                    <div class="col-sm-6 col-6 col-md-3">
+                        <h5 class="footer-phone-heading">address</h5>
+                        <i class="fas fa-map-marker-alt footer-icon"></i><a href="#"> Karte zeigen ></a>
+                    </div>
+                    <div class="col-sm-6 col-6 col-md-3">
+                        <h5 class="footer-phone-heading">Schreiben Sie uns eine E-Mail</h5>
+                        <i class="fas fa-envelope footer-icon"></i><a href="mailto:info@techdivision.com"> info@techdivision.com</a>
+                    </div>
+                </div>
+                <div class="row line-footer">
+                    <div class="col-6 col-sm-4 col-lg-2">
+                        <p class="header-links">
+                            base+shop
+                        </p>
+                        <ul class="links-list">
+                            <li class="links-item"><a href="#">Unternehmen</a> </li>
+                            <li class="links-item"><a href="#">Impressum</a> </li>
+                            <li class="links-item"><a href="#">News</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-2">
+                        <p class="header-links">
+                            Rechtliches
+                        </p>
+                        <ul class="links-list">
+                            <li class="links-item"><a href="#">AGB</a> </li>
+                            <li class="links-item"><a href="#">Datenschut</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-2">
+                        <p class="header-links">
+                            Versand
+                        </p>
+                        <ul class="links-list">
+                            <li class="links-item"><a href="#">Versandkosten</a> </li>
+                            <li class="links-item"><a href="#">Widerrufsrecht/Garantie</a> </li>
+                            <li class="links-item"><a href="#">Rückversand</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-sm-4 col-lg-2">
+                        <p class="header-links">
+                            standort
+                        </p>
+                        <ul class="links-list">
+                            <li class="links-item"><a href="#">TechDivision GmbH</a> </li>
+                            <li class="links-item"><a href="#">Spinnereiinsel 3a</a> </li>
+                            <li class="links-item"><a href="#">83059 Kolbermoor (DE)</a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-12 offset-sm-4 col-sm-4 offset-lg-1 col-lg-3">
+                        <p class="header-links">
+                            Newsletter
+                        </p>
+                        <form action="#" class="news-form">
+                            <input type="text" class="news" name="" id="" placeholder="Ihre E-Mail Adresse">
+                            <input type="submit" value="" class="news-btn">
+                        </form>
+
+                        <div class="social-icons">
+                            <a href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+			  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/category.js"></script>
+</body>
+</html>

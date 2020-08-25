@@ -1,0 +1,264 @@
+body{
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x:hidden;
+}
+ul{
+    padding: 0;
+}
+
+/*
+    HEADER
+*/
+.nav-left .nav-link{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.navbar-light .navbar-nav .nav-link {
+    font-size: 14px;
+    color: rgba(0,0,0);
+}
+.nav-left .nav-item .nav-link{
+    margin: 0 17px;
+}
+.search-block{
+    border-top: 1px solid #e5e5e5;
+    position: relative;
+    padding: 20px 0;
+    background-color: #f2f4f6;
+}
+
+.search-sign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+.search-form{
+    position: relative;
+    margin-left: auto;
+}
+.search-form input[type="text"]{
+    padding: 0 40px 0 15px;
+    width: 237px;
+    height: 54px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+}
+.search-form input::placeholder{
+    font-size: 14px;
+    color: #272727;
+}
+.form-btn-submt{
+    background-color: #ffffff;
+    border: 0;
+    height: 15px;
+    width: 15px;
+    top: 20px;
+    left: 207px;
+    position: absolute;
+    background: url(../images/icon_search.png) no-repeat center;
+    background-size: contain;
+}
+/* .search-block .fa-search{
+    font-size: 17px;
+    position: relative;
+    left: 227px;
+} */
+
+/*
+    HEADER
+*/
+
+.product-sect{
+    background-color: #f3f5f7;
+}
+.product-block{
+    margin-top: 50px;
+    background-color: white;
+    text-align: center;
+    padding: 12px 0 40px;
+}
+.product-img{
+    align-items: center;
+    min-height: 177px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 60px);
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.product-heading a, .producte-price{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+.product-heading, .producte-price{
+    margin-bottom: 15px;
+}
+.producte-price{
+    font-weight: 600;
+}
+.product-sect-heading{
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+
+}
+.product-desc{
+    padding: 0 30px;
+}
+.product-desc, .product-desc a{
+    color: #848484;
+    font-size: 12px;
+}
+.product-desc a{
+    text-decoration: underline;
+}
+
+/*
+ footer
+ */
+footer{
+    margin-top: auto;
+}
+footer a{
+    color: #686868;
+    font-size: 12px;
+}
+footer a:hover{
+    color: #303030;
+    text-decoration: none;
+}
+.footer-line{
+    padding: 20px 0 0;
+}
+.footer-phone{
+    display: flex;
+}
+.footer-phone-icon{
+    margin-left: 35px;
+    color: #666;
+    font-size: 40px;
+    margin-right: 12px;
+}
+.footer-phone-heading{
+    text-transform: uppercase;
+    color: #686868;
+    font-size: 12px;
+    margin: 0;
+
+}
+.footer-phone-number a{
+    line-height: 1;
+    font-size: 24px;
+    color: #686868;
+    font-size: 24px;
+    margin: 0;
+}
+
+
+.footer-icon{
+    margin-right: 12px;
+}
+
+.line-footer{
+    padding: 53px 0;
+}
+.back-line{
+    border-bottom:1px solid #eaeaea ;
+}
+
+
+.header-links{
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: #686868;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.links-list{
+
+    margin-left: 0px;
+}
+.links-item{
+    margin-bottom: 15px;
+    font-size: 12px;
+    color: #686868;
+    list-style: none;   
+}
+.news-form{
+    position: relative;
+}
+.news{
+    border: 1px solid #e5e5e5;
+    padding: 13px 30px 13px 12px;
+    width: 100%;
+}
+.news::placeholder{
+    font-size: 14px;
+    color: #686868;
+}
+.news-btn{
+    height: 14px;
+    width: 14px;
+    background: url(../images/arrow-right-footer.png) no-repeat center;
+    background-size: contain;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 93%;
+    transform: translate(-50%, -50%);
+}
+.social-icons{
+    margin-top: 35px;
+}
+.social-icons a{
+    font-size: 16px;
+    margin-right: 20px;
+}
+/*
+ footer
+ */
+
+@media (max-width: 992px){
+    .search-sign{
+        top: 0;
+        left: 0;
+        position: static;
+        transform: unset;
+    }
+    .search-container{
+        flex-direction: column;
+    }
+    .form-block{
+        flex-direction: column;
+    }
+    
+    .search-sign, .search-form{
+        margin: 0 auto;
+        align-self: baseline;
+    }
+    .search-sign{
+        margin-bottom: 15px;
+    }
+    .footer-phone-number a{
+        font-size: 15px;
+    }
+    .footer-phone-icon{
+        font-size: 30px;
+    }
+}
+@media (max-width: 767px){
+    .footer-phone-icon{
+        margin-left: unset;
+    }
+}
